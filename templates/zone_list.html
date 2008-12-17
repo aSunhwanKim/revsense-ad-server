@@ -1,0 +1,77 @@
+<!-- BEGIN: main -->
+<table width=100% border=0 cellspacing=0 cellpadding=2>
+<tr>
+	<td width=1>Date:</td>
+	<form method=GET>
+	<td width=1>
+		<select name="dates" onChange="submit();">
+		{MDATES}
+		</select>
+		<input type="hidden" name="section" value="zone" />
+	</td>
+	<td width=1><input type=submit value="Go" /></td>
+	</form>
+
+	<Td width=70%>&nbsp;</td>
+
+	<Form method=GET>
+	<td width=1>@@Create@@&nbsp;@@Zone@@:</td>
+	<td width=1>
+		<select name=f[zone_style]> 
+			<option value=0>-- @@Select Template@@ --</option>
+			{ZONE_STYLE}
+		</select><br>
+	</td>
+	<td width=1><input type=submit value="Create" /></td>
+	<input type=hidden name=section value=zone>
+	<input type=hidden name=action value=zone_new>
+	</form>
+</tr>
+</table>
+
+<br/>
+
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td bgcolor=#999999>
+<table width=100% border=0 cellspacing=1 cellpadding=3>
+<tr bgcolor="#EEEEEE">
+	<td><font size=1><b>@@Name@@</b></td>
+	<td><font size=1><b>@@Type@@</b></td>
+	<td align=right width=1><font size=1><b>@@Rate@@</b></td>
+	<td><font size=1><b>@@Template@@</b></td>
+	<td align=right bgcolor="#99999"><font size=1><b>@@Clicks@@</b></b></td>
+	<td align=right bgcolor="#99999"><font size=1><b>@@Views@@</b></b></td>
+	<td align=right bgcolor="#99999"><font size=1><b>@@Earned@@</b></b></td>
+	<td><font size=1><b>@@Status@@</b></td>	
+	<td align=right width=1><font size=1><b>@@Ads@@</b></font></td>
+	<td width=1><font size=1>&nbsp;</td>
+</tr>
+<!-- BEGIN: list -->
+<tr bgcolor="{BGCOLOR}">
+	<td><font size=1><a href=?section=zone&action=zone_define&f[id]={ID}>{NAME}</a></td>
+	<td><font size=1>{RATE_TYPE}</td>
+	<td align=right width=1><font size=1>@@$@@{RATE}</font></td>
+	<td><font size=1>{STYLE}</td>	
+	<td align=right><font size=1>{CLICKS}</font></td>
+	<td align=right><font size=1>{IMPRESSIONS}</font></td>
+	<td align=right><font size=1>{AMOUNT}</font></td>
+	<td><font size=1>{STATUS}</td>
+	<td align=right width=1><font size=1><a href="?section=zone&action=zone_ads&f[id]={ID}" title="@@View pending and active ads for@@ {NAME}"><font color=red>{PENDING_ADS}</font>/<font color=green>{ADS}</font></a></font></td>
+	<td width=1><font size=1><a href="?section=zone&action=zone_delete&f[id]={ID}" onclick="javascript:return confirm('@@Are you sure you want to delete@@ {NAME} ?\n\r@@All ads in this zone will be deleted as well@@.')"><img src="images/stock_delete-16.png" border=0></a></td>
+</tr>
+<!-- END: list -->
+<!-- BEGIN: totals -->
+<tr bgcolor="#EEEEEE">
+	<td align=right colspan=4><b>TOTALS:</b></td>
+	<td align=right><b>{TOTAL_CLICKS}</b></td>
+	<td align=right><b>{TOTAL_IMPRESSIONS}</b></td>
+	<td align=right><b>{TOTAL_AMOUNT}</b></td>
+	<td>&nbsp;</td>
+	<td align=right><b>{TOTAL_ADS}</b></td>
+	<td>&nbsp;</td>
+</tr>
+<!-- END: totals -->
+</table>
+</td></tr>
+</table>
+<!-- END: main -->

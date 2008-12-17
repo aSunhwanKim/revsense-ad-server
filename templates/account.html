@@ -1,0 +1,37 @@
+<!-- BEGIN: main -->
+<table width=100% border=0 cellspacing=0 cellpadding=2>
+<form method=get>
+<tr bgcolor=#EEEEEE>
+	<td width=1 bgcolor=#CCCCCC><font size=2>&nbsp;<b>@@Balance@@:</b></td>
+	<td width=1 bgcolor=#CCCCCC nowrap><font size=2><b>@@$@@{BALANCE}</b>&nbsp;</td>
+	<td width=1>&nbsp;&nbsp;</td>
+	<td width=1><font size=2>@@Add@@&nbsp;@@Funds@@:&nbsp;@@$@@</td>
+	<td width=1><input type=text name=f[amount] size=8 value="{MIN2}"></td>
+	<td width=1><input type=submit value="@@Add Funds@@ &raquo;"></td>
+	<td width=99%><font size=1><i>@@Minimum amount to add:@@ @@$@@{MINIMUM}</i></font></td>
+</tr>
+<input type=hidden name=section value=pay>
+<input type=hidden name=action value=form>
+</form>
+</table>
+<p>
+<table width=100% border=0 cellspacing=1 cellpadding=2 bgcolor=#EEEEEE>
+<tr bgcolor=#FFFFCC>
+	<td colspan=5 bgcolor=#FFFFCC><font size=2><b>@@Payment History@@</b></font></td>
+</tr>
+<tr bgcolor=#CCCCCC>
+	<td><font size=2><b>@@Date@@</b></font></td>
+	<td><font size=2><b>@@Type@@</b></font></td>
+	<td><font size=2><b>@@Description@@</b></font></td>
+	<td align=right><font size=2><b>@@Amount@@</b></font></td>
+</tr>
+<!-- BEGIN: list -->
+<tr bgcolor={BGCOLOR}>
+	<td><font size=2>{DATE}</font></td>
+	<td><font size=2>{TYPE}</font></td>
+	<td><font size=2>{DESC}</font></td>
+	<td align=right><font size=2>{AMOUNT}</font></td>
+</tr>
+<!-- END: list -->
+</table>
+<!-- END: main -->

@@ -1,0 +1,65 @@
+<!-- BEGIN: main -->
+
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr><td bgcolor=#666666>
+<Table width=100% border=0 cellspacing=1 cellpadding=3 style="font-size: 12px;">
+<tr bgcolor=#FFFFFF>
+	<td colspan=5>
+	<table width=100% border=0 cellspacing=0 cellpadding=1>
+	<form method=get action=index.php>
+	<tr bgcolor=#FFFFFF>
+			<td width=1 style="font-size: 12px;"><b>@@Date@@:</b></td>
+		<td width=1>
+			<select name=f[date] onChange="submit()">
+			{DROPDATE}
+			</select>
+		</td>
+		<td width=1><input type=submit value=Go></td>
+		<td width=99% align=center style="font-size: 12px;">
+			&nbsp;&nbsp;<a href=?section=ads&action=edit><font color=red><b>@@Create Ad@@</b></font></a> | 
+			<a href=?section=ads&action=conversioncode>@@Conversion Code@@</a>
+			</font></td>
+		<input type=hidden name=section value=ads>
+	</tr>
+	</form>
+	</table>
+	</td>
+	<td colspan=5 align=center>{PAUSE}</td>
+</tr>
+<tr bgcolor=#CCCCCC>
+	<td width=50%><b>@@Title@@</b></td>
+	<td width=1><b>@@Expires@@</b></td>
+	<td width=1><b>@@Units@@</b></td>
+	<td width=1><b>@@Views@@</b></td>
+	<td width=1><b>@@Clicks@@</b></td>
+	<td width=1><b>@@CTR@@%</b></td>	
+	<td width=1><b>@@Spend@@</b></td>
+	<td width=1><b>@@Rate@@</b></td>
+	<td colspan=2 align=center><b>@@Status@@</b></td>	
+</tr>
+<!-- BEGIN: list -->
+<tr bgcolor="{BGCOLOR}">
+	<td width=50%><a href=?section=ads&action=edit&f[id]={ZID}>{TITLE}</a></td>
+	<td>{EXPIRES}</font></td>
+	<td align=right width=1>{UNITS}</td>
+	<td align=right width=1>{IMPRESSIONS}</td>
+	<td align=right width=1>{CLICKS}</td>
+	<td align=right width=1>{CTR}</td>
+	<td align=right width=1>{SPEND}</td>
+	<td align=right width=1>{RATE}</td>
+	<td width=1>{STATUS}</td>	
+	<td width=1>{CHECKER}</td>
+</tr>
+<!-- END: list -->
+<tr bgcolor=#FFFFFF>
+	<td colspan=3 align=right><b>@@TOTALS@@:</b></font></td>
+	<td width=1 align=right bgcolor="#CCCCCC"><b>{T_IMPRESSIONS}</b></td>
+	<Td width=1 align=right bgcolor="#CCCCCC"><b>{T_CLICKS}</b></td>
+	<td width=1 align=right bgcolor="#CCCCCC"><b>{T_CTR}</b></td>
+	<td width=1 align=right bgcolor="#CCCCCC"><b>{T_SPEND}</b></td>
+	<td colspan=3>&nbsp;</td>
+</tr>
+</Table>
+</td></tr>
+</table>
+<!-- END: main -->

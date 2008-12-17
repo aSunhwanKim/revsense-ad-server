@@ -1,0 +1,67 @@
+<!-- BEGIN: main -->
+{ADS_MENU}<p>
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr>
+	<td valign=top width=99%>
+		<table width=100% border=0 cellspacing=1 cellpadding=3 bgcolor=#EEEEEE>
+		<tr bgcolor=#EEEEEE>
+			<td colspan=10>
+				<table width=100% border=0 cellspacing=0 cellpadding=0>
+				<form method=get>
+				<tr>
+					<td width=1><font size=1><b>@@Period@@</b>&nbsp;</font></td>
+					<td width=1>
+						<select name=f[period]>
+							{PERIODLIST}
+						</select>
+					</td>
+					<td width=1><font size=1>&nbsp;&nbsp;@@Keyword@@&nbsp;</font></td>
+					<Td width=1>
+						<select name=f[kid]>
+							{KEYWORDLIST}
+						</select>
+					</td>
+					<td width=1>&nbsp;</td>
+					<td width=1><input type=submit value="Go"></td>
+					<td width=99% align=center><font size=1>{PERIOD}&nbsp;</font></td>
+				</tr>
+				<input type=hidden name=section value=ads>
+				<input type=hidden name=action value=stats>
+				<input type=hidden name=f[id] value="{ID}">
+				</form>
+				</table>
+			</td>
+		</tr>
+		<tr bgcolor=#FFFFCC>
+			<td><font size=1><b>@@Date@@</b></font></td>
+			<td align=right><font size=1><b>@@Clicks@@</b></font></td>
+			<td align=right><font size=1><b>@@Views@@</b></font></td>
+			<td align=right><font size=1><b>@@CTR@@</b></font></td>
+			<td align=right><font size=1><b>@@Orders@@</b></font></td>
+			<td align=right><font size=1><b>@@Spend@@</b></font></td>
+		</tr>
+		<!-- BEGIN: list -->
+		<tr bgcolor={BGCOLOR}>
+			<td><font size=1>{DATE}</font></td>
+			<td align=right><font size=1>{CLICKS}</font></td>
+			<td align=right><font size=1>{VIEWS}</font></td>
+			<td align=right><font size=1>{CTR}%</font></td>
+			<td align=right><font size=1>{ORDERS}</font></td>
+			<td align=right><font size=1>{SPEND}</font></td>
+		</tr>
+		<!-- END: list -->
+		<!-- BEGIN: totals -->
+		<tr bgcolor=#CCCCCC>
+			<td align=right><font size=1><b>@@TOTALS@@</b> :</font></td>
+			<td align=right><font size=1><b>{TCLICKS}</b></font></td>
+			<td align=right><font size=1><b>{TVIEWS}</b></font></td>
+			<td align=right><font size=1><b>{TCTR}@@%@@</b></font></td>
+			<td align=right><font size=1><b>{TORDERS}</b></font></td>
+			<td align=right><font size=1><b>@@$@@{TSPEND}</b></font></td>
+		</tr>
+		<!-- END: totals -->
+		</table>
+	</td>
+</tr>
+</table>
+<!-- END: main -->
